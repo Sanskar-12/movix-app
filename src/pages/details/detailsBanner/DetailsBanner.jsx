@@ -6,7 +6,6 @@ import dayjs from "dayjs";
 import "./style.scss";
 import useFetch from "../../../hooks/useFetch";
 import CircleRating from "../../../components/circleRating/CircleRating";
-import Img from "../../../components/lazyloadImage/Img";
 import PosterFallback from "../../../assets/no-poster.png";
 import ContentWrapper from "../../../components/contentwrapper/ContentWrapper";
 import Genre from "../../../components/genre/Genre";
@@ -48,12 +47,12 @@ const DetailsBanner = ({ video, crew }) => {
                 <div className="content">
                   <div className="left">
                     {data.poster_path ? (
-                      <Img
+                      <img
                         src={url.backdrop + data.poster_path}
                         className="posterImg"
                       />
                     ) : (
-                      <Img src={PosterFallback} />
+                      <img src={PosterFallback} />
                     )}
                   </div>
                   <div className="right">
