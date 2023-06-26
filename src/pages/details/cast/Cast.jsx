@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import "./style.scss";
 import avatar from "../../../assets/avatar.png";
 import ContentWrapper from "../../../components/contentwrapper/ContentWrapper";
-import Img from "../../../components/lazyloadImage/Img"
 
 const Cast = ({ data, loading }) => {
     const { url } = useSelector((state) => state.home);
@@ -30,7 +29,7 @@ const Cast = ({ data, loading }) => {
                                 return (
                                     <div className="listItem" key={item.id}>
                                         <div className="profileImg">
-                                            <Img src={imgUrl}/>
+                                            <img src={imgUrl}/>
                                         </div>
                                         <div className="name">
                                             {item.name}
