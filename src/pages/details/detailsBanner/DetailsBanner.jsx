@@ -11,6 +11,7 @@ import ContentWrapper from "../../../components/contentwrapper/ContentWrapper";
 import Genre from "../../../components/genre/Genre";
 import { PlayIcon } from "./PlayIcon";
 import VideoPopup from "../../../components/videopopup/VideoPopup";
+import Img from "../../../components/lazyLoadImage/Img"
 
 const DetailsBanner = ({ video, crew }) => {
   const { mediaType, id } = useParams();
@@ -47,12 +48,12 @@ const DetailsBanner = ({ video, crew }) => {
                 <div className="content">
                   <div className="left">
                     {data.poster_path ? (
-                      <img
+                      <Img
                         src={url.backdrop + data.poster_path}
                         className="posterImg"
                       />
                     ) : (
-                      <img src={PosterFallback} />
+                      <Img src={PosterFallback} />
                     )}
                   </div>
                   <div className="right">

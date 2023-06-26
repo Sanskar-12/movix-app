@@ -12,6 +12,7 @@ import "./style.scss";
 import ContentWrapper from "../contentwrapper/ContentWrapper";
 import CircleRating from "../circleRating/CircleRating";
 import Genre from "../genre/Genre";
+import Img from "../lazyLoadImage/Img"
 
 const Carousel = ({ data, loading ,endpoint,title}) => {
   const carouselcontainer = useRef();
@@ -73,7 +74,7 @@ const Carousel = ({ data, loading ,endpoint,title}) => {
                   onClick={() => navigation(`/${item.media_type || endpoint}/${item.id}`)}
                 >
                   <div className="posterBlock">
-                    <img src={posterurl} />
+                    <Img src={posterurl} />
                     <CircleRating rating={item.vote_average.toFixed(1)} />
                     <Genre data={item.genre_ids.slice(0, 2)} />
                   </div>
